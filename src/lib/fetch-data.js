@@ -45,12 +45,58 @@ export async function getCompanyInfo() {
                 }
             }
         `,
+        context: {
+            fetchOptions: {
+                next: { revalidate: 7200 },
+            },
+        },
     });
 
     return data;
 }
 
-export async function getTopBarMenu() {
+// HEADER
+export async function getNewsTracker() {
+    const { data } = await getClient().query({
+        query: gql`
+            query {
+                fICountryAdmin {
+                    optionsCountryAdmin {
+                        headerNewsTracker {
+                            postTracker {
+                                nodes {
+                                    ... on Post {
+                                        title
+                                        slug
+                                        uri
+                                    }
+                                }
+                            }
+                            postTrackerEn {
+                                nodes {
+                                    ... on Post {
+                                        title
+                                        slug
+                                        uri
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        `,
+        context: {
+            fetchOptions: {
+                next: { revalidate: 60 },
+            },
+        },
+    });
+
+    return data.fICountryAdmin.optionsCountryAdmin.headerNewsTracker;
+}
+
+export async function getNavMenus() {
     const { data } = await getClient().query({
         query: gql`
             query {
@@ -75,12 +121,39 @@ export async function getTopBarMenu() {
         `,
         context: {
             fetchOptions: {
-                next: { revalidate: 5 },
+                next: { revalidate: 600 },
             },
         },
     });
 
     return data.menus.nodes;
+}
+
+export async function getCountryDomains() {
+    const { data } = await getClient().query({
+        query: gql`
+            query {
+                fISuperAdmin {
+                    superadminFields {
+                        fiCountryDomains {
+                            countryName
+                            siteUrl
+                            isoLangCode
+                            isDefault
+                            isEnabled
+                        }
+                    }
+                }
+            }
+        `,
+        context: {
+            fetchOptions: {
+                next: { revalidate: 600 },
+            },
+        },
+    });
+
+    return data.fISuperAdmin.superadminFields.fiCountryDomains;
 }
 
 export async function getPostsES(categoryName) {

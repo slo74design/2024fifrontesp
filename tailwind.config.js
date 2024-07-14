@@ -9,15 +9,21 @@ const config = {
     ],
     theme: {
         extend: {
+            backgroundImage: {
+                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+                "gradient-conic":
+                    "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+            },
             colors: {
-                "mili-p1": "#000080",
-                "mili-p2": "#ff0000",
-                "mili-p3": "#ffd700",
-                "mili-p4": "#228b22",
-                "mili-p5": "#C42021", // color#4
+                fi: {
+                    100: "#00004A", // Primary color
+                    200: "#04ADFF", // Secondary color
+                    300: "#8BAC1A", // CTA
+                    400: "#484848", // Body Content
+                },
             },
         },
     },
-    plugins: [flowbite.plugin()],
+    plugins: [flowbite.plugin(), require("@tailwindcss/forms")],
 };
 export default config;

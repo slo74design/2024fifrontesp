@@ -1,19 +1,4 @@
 import localFont from "next/font/local";
-import { Inter, Outfit } from "next/font/google";
-
-export const inter = Inter({
-    weight: ["200", "300", "400", "500"],
-    variable: "--font-content",
-    subsets: ["latin"],
-    display: "swap",
-});
-
-export const outfit = Outfit({
-    weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-    variable: "--font-headings",
-    subsets: ["latin"],
-    display: "swap",
-});
 
 export const fiCenturyVariable = localFont({
     src: "../../public/fonts/century.woff2",
@@ -32,5 +17,10 @@ export const fiCenturyRegular = localFont({
 
 export const fiCenturySemiBold = localFont({
     src: "../../public/fonts/centurysemibold.woff2",
+    display: "swap",
+});
+
+export const fiCenturyBold = localFont({
+    src: "../../public/fonts/centurybold.woff2",
     display: "swap",
 });

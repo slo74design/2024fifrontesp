@@ -1,6 +1,6 @@
 import { NextIntlClientProvider, useMessages } from "next-intl";
 
-import { fiCenturyVariable, outfit } from "@/utils/fonts";
+import { fiCenturyVariable } from "@/utils/fonts";
 import "../globals.css";
 import { ThemeModeScript } from "flowbite-react";
 import NewsTopBar from "@/components/header/NewsTopBar";
@@ -22,7 +22,7 @@ export default function RootLayout({ children, params: { locale } }) {
             <head>
                 <ThemeModeScript />
             </head>
-            <body className={outfit.className}>
+            <body className={fiCenturyVariable.className}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <div className="flex flex-col min-h-screen min-w-full items-start justify-start m-0 p-0">
                         <NewsTopBar />

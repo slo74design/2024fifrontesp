@@ -8,7 +8,7 @@ import { getAllMenus } from "@/data";
 import { fiCenturyRegular } from "@/utils/fonts";
 import FiSelectWithAvatar from "@/ux/FiSelectWithAvatar";
 import FiInputIcon from "@/ux/FiInputIcon";
-import FiSwitcherLang from "@/ux/FiSwitcherLang";
+import FiSwitcherLang from "@/ux/Header/FiSwitcherLang";
 
 const listCountriesWp = [
     {
@@ -35,11 +35,11 @@ export default async function MainHeaderTop() {
     const dataWpFilteredByLang =
         locale === "es"
             ? dataWp.filter(
-                (object) => object.locations[0] === "MENU_TOPBAR_1ST"
-            )
+                  (object) => object.locations[0] === "MENU_TOPBAR_1ST"
+              )
             : dataWp.filter(
-                (object) => object.locations[0] === "MENU_TOPBAR_2ST"
-            );
+                  (object) => object.locations[0] === "MENU_TOPBAR_2ST"
+              );
 
     return (
         <div
