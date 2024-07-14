@@ -14,12 +14,14 @@ const FiSearchForm = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        // searchActions(e.target[0].value);
+        setResults([]);
         const resp = await searchActions(e.target[0].value);
         console.log(resp);
 
-        resp.length > 0 && setResults(resp);
-        // setIsOpen(true);
+        if (resp.length > 0) {
+            setResults(resp);
+            setIsOpen(true);
+        }
     };
 
     return (
@@ -66,14 +68,14 @@ const FiSearchForm = () => {
                     <span className="sr-only">Search</span>
                 </button>
             </form>
-            {/* {isOpen && ( */}
-            <div className="flex flex-col z-10 bg-slate-200 h-48">
-                {results.length > 0 &&
-                    results.map((item, index) => (
-                        <div key={index}>{item.databaseId}</div>
-                    ))}
-            </div>
-            {/* )} */}
+            {isOpen && (
+                <div className="flex flex-col z-50 bg-slate-200 h-48">
+                    {results.length > 0 &&
+                        results.map((item, index) => (
+                            <div key={index}>{item.databaseId}</div>
+                        ))}
+                </div>
+            )}
         </div>
     );
 };

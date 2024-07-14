@@ -17,7 +17,7 @@ export default async function Navbar() {
 
     return (
         <div
-            className={`${fiCenturySemiBold.className} bg-white w-full flex justify-between items-center py-4 px-10 border-b border-slate-100`}
+            className={`${fiCenturySemiBold.className} bg-white w-full flex justify-between items-center py-4 px-10 border-b border-slate-100 z-1`}
         >
             <div className="basis-3/6">
                 <Image src="/logo.png" alt="Logo" width="120" height="30" />
