@@ -10,8 +10,6 @@ export const searchActions = async (valTxt) => {
         d.label.toLowerCase().includes(valTxt.toLowerCase())
     );
 
-    // console.log(filterMenu);
-
     revalidatePath("/");
     return filterMenu;
 };

@@ -1,14 +1,13 @@
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import { cookies } from "next/headers";
+import { ThemeModeScript } from "flowbite-react";
+import { InitFlowbite } from "@/lib/flowbite-client";
+
+import NewsTopBar from "@/components/header/NewsTopBar";
+import Navbar from "@/components/header/Navbar";
 
 import { fiCenturyVariable } from "@/utils/fonts";
 import "../globals.css";
-import { ThemeModeScript } from "flowbite-react";
-import NewsTopBar from "@/components/header/NewsTopBar";
-import Navbar from "@/components/header/Navbar";
-// import CatNavigation from "@/components/header/CatNavigation";
-// import FooterSection from "@/components/footer/FooterSection";
-// import MainHeaderTop from "@/components/header/MainHeader-Top";
-// import MainHeader from "@/components/header/MainHeader";
 
 export const metadata = {
     title: "Create Next App",
@@ -17,6 +16,11 @@ export const metadata = {
 
 export default function RootLayout({ children, params: { locale } }) {
     const messages = useMessages();
+
+    // Check cookies Newsletter Modal
+    const cookieStore = cookies();
+    const checkCookieFiNwModal = cookieStore.get("fiNwModal");
+
     return (
         <html lang={locale}>
             <head>
@@ -27,15 +31,14 @@ export default function RootLayout({ children, params: { locale } }) {
                     <div className="flex flex-col min-h-screen min-w-full items-start justify-start m-0 p-0">
                         <NewsTopBar />
                         <Navbar />
-                        {/* <CatNavigation /> */}
-                        {/* <MainHeaderTop /> */}
-                        {/* <MainHeader /> */}
-                        {/* <Header /> */}
-                        {/* <Switcher /> */}
-                        <p>{locale}</p>
                         {children}
+                        <InitFlowbite />
+                        {checkCookieFiNwModal == undefined ? (
+                            console.log("not found")
+                        ) : (
+                            <p>{locale}</p>
+                        )}
                     </div>
-                    {/* <FooterSection /> */}
                 </NextIntlClientProvider>
             </body>
         </html>

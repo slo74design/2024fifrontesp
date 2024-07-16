@@ -121,7 +121,7 @@ export async function getNavMenus() {
         `,
         context: {
             fetchOptions: {
-                next: { revalidate: 600 },
+                next: { revalidate: 60 },
             },
         },
     });

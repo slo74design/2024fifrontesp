@@ -19,9 +19,12 @@ export default async function NewsTopBar() {
             >
                 {Object.values(dataWp).length && locale === "es" ? (
                     <Link
-                        href={`/${locale}/${dataWp.postTracker?.nodes[0].uri.slice(
-                            4
-                        )}`}
+                        // href={`/${locale}/${dataWp.postTracker?.nodes[0].uri.slice(
+                        //     4
+                        // )}`}
+                        href={
+                            `/${locale}` + `${dataWp.postTracker?.nodes[0].uri}`
+                        }
                         className={`text-sm uppercase tracking-wider`}
                     >
                         {dataWp.postTracker?.nodes[0].title}
