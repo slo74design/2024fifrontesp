@@ -48,7 +48,7 @@ export default function MainNavMenu() {
                     id="mega-menu-full"
                     className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
                 >
-                    <ul className="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
+                    <ul className="flex flex-col mt-4 text-sm font-medium tracking-wider md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
                         <li>
                             <a
                                 href="#"
@@ -115,7 +115,7 @@ export default function MainNavMenu() {
                     // id="mega-menu-full-dropdown"
                     className="mt-1 bg-white transition-opacity duration-300 ease-in-out scroll-smooth"
                 >
-                    <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
+                    <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-sm text-fi-400 sm:grid-cols-2 md:grid-cols-3 md:px-6">
                         <ul aria-labelledby="mega-menu-full-dropdown-button">
                             <li>
                                 <a
