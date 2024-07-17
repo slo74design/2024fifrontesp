@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
 import { useLocale } from "next-intl";
 import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { fiCenturySemiBold } from "@/utils/fonts";
@@ -36,7 +35,6 @@ const FiSwitcherLang = ({ domains }) => {
         );
     };
 
-    const [isOpen, setIsOpen] = useState(false);
     return (
         <Dropdown inline label={labelSelected(currentDomain)}>
             {excludeDomain.map((lang, index) => (

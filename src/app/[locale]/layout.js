@@ -5,6 +5,7 @@ import { InitFlowbite } from "@/lib/flowbite-client";
 
 import NewsTopBar from "@/components/header/NewsTopBar";
 import Navbar from "@/components/header/Navbar";
+import HomeHero from "@/components/header/HomeHero";
 
 import { fiCenturyVariable } from "@/utils/fonts";
 import "../globals.css";
@@ -31,6 +32,7 @@ export default function RootLayout({ children, params: { locale } }) {
                     <div className="flex flex-col min-h-screen min-w-full items-start justify-start m-0 p-0">
                         <NewsTopBar />
                         <Navbar />
+                        <HomeHero />
                         {children}
                         <InitFlowbite />
                         {checkCookieFiNwModal == undefined ? (

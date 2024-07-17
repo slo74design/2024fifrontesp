@@ -11,7 +11,7 @@ import {
 } from "@/ux";
 
 import { getCountryDomains } from "@/lib/fetch-data";
-import CatNavigation from "./CatNavigation";
+import ExternalDomains from "./ExternalDomains";
 
 export default async function Navbar() {
     const domains = await getCountryDomains();
@@ -21,7 +21,7 @@ export default async function Navbar() {
             className={`${fiCenturySemiBold.className} bg-white w-full flex justify-between items-center py-4 px-10 border-b border-slate-100 z-10`}
         >
             <div className="basis-3/6">
-                <CatNavigation />
+                <ExternalDomains />
             </div>
 
             <div className="flex basis-3/6 items-center justify-end gap-x-6">

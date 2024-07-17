@@ -4,7 +4,7 @@ import { Loading } from "@/ux";
 import Link from "next/link";
 import { getNavMenus } from "@/lib/fetch-data";
 
-export default async function CatNavigation() {
+export default async function ExternalDomains() {
     const locale = useLocale();
     const menuTop = await getNavMenus();
 
@@ -16,7 +16,7 @@ export default async function CatNavigation() {
               );
     return (
         <Suspense fallback={<Loading />}>
-            <div className="bg-white w-full flex justify-between items-center px-10 text-sm text-slate-700 uppercase">
+            <div className="bg-white w-full flex justify-start items-center text-sm text-slate-700 uppercase">
                 <div className="flex items-center justify-center gap-x-3">
                     {menuFilteredByLang[0].menuItems?.nodes.map((node) => (
                         <Link
