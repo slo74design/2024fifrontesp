@@ -21,7 +21,7 @@ const FiSwitcherLang = ({ domains }) => {
     const labelSelected = (currentDomain) => {
         return (
             <div
-                className={`${fiCenturySemiBold.className} inline-flex max-w-48 w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-fi-400 ring-gray-300 hover:bg-gray-50`}
+                className={`${fiCenturySemiBold.className} inline-flex max-w-48 w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-fiContent-200 ring-gray-300 hover:bg-gray-50`}
             >
                 <Image
                     className="w-5 h-5"
@@ -44,7 +44,7 @@ const FiSwitcherLang = ({ domains }) => {
                         href={`${lang.siteUrl}`}
                         role="menuitem"
                         tabIndex="-1"
-                        className={`${fiCenturySemiBold.className} flex flex-row gap-x-2 px-4 py-0 text-sm text-fi-400 hover:text-fi-200`}
+                        className={`${fiCenturySemiBold.className} flex flex-row gap-x-2 px-4 py-0 text-sm text-fiContent-200 hover:text-fiLight-600`}
                     >
                         <Image
                             className="w-5 h-5"

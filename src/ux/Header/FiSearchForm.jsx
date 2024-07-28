@@ -98,7 +98,7 @@ const FiSearchForm = () => {
                 <input
                     type="search"
                     id="default-search"
-                    className="block w-full px-1 text-sm text-fi-400 border-none focus:ring-0 focus:border-none"
+                    className="block w-full px-1 text-sm text-fiContent-200 border-none focus:ring-0 focus:border-none"
                     placeholder={t("search")}
                     required
                     value={query}
@@ -109,7 +109,7 @@ const FiSearchForm = () => {
                     className="bg-transparent focus:ring-0 focus:outline-none text-sm px-4"
                 >
                     <svg
-                        className="w-4 h-4 text-fi-400 dark:text-gray-400"
+                        className="w-4 h-4 text-fiContent-200 dark:text-gray-400"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

@@ -3,11 +3,8 @@ import { cookies } from "next/headers";
 import { ThemeModeScript } from "flowbite-react";
 import { InitFlowbite } from "@/lib/flowbite-client";
 
-import NewsTopBar from "@/components/header/NewsTopBar";
-import Navbar from "@/components/header/Navbar";
-import HomeHero from "@/components/header/HomeHero";
-
-import { fiCenturyVariable } from "@/utils/fonts";
+import HeaderParent from "@/components/HeaderParent";
+import { fiCenturyRegular } from "@/utils/fonts";
 import "../globals.css";
 
 export const metadata = {
@@ -27,12 +24,12 @@ export default function RootLayout({ children, params: { locale } }) {
             <head>
                 <ThemeModeScript />
             </head>
-            <body className={fiCenturyVariable.className}>
+            <body className={fiCenturyRegular.className}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
-                    <div className="flex flex-col min-h-screen min-w-full items-start justify-start m-0 p-0">
-                        <NewsTopBar />
-                        <Navbar />
-                        <HomeHero />
+                    <div className="flex flex-col min-h-screen w-full items-start justify-start m-0 p-0">
+                        <div className="sticky top-0 z-50 w-full">
+                            <HeaderParent />
+                        </div>
                         {children}
                         <InitFlowbite />
                         {checkCookieFiNwModal == undefined ? (
@@ -40,6 +37,12 @@ export default function RootLayout({ children, params: { locale } }) {
                         ) : (
                             <p>{locale}</p>
                         )}
+                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
+                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
+                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
+                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
+                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
+                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
                     </div>
                 </NextIntlClientProvider>
             </body>

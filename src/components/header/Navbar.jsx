@@ -18,7 +18,7 @@ export default async function Navbar() {
 
     return (
         <div
-            className={`${fiCenturySemiBold.className} bg-white w-full flex justify-between items-center py-4 px-10 border-b border-slate-100 z-10`}
+            className={`${fiCenturySemiBold.className} hidden bg-white w-full md:flex justify-between items-center py-4 px-16 border-b border-slate-100 z-10`}
         >
             <div className="basis-3/6">
                 <ExternalDomains />

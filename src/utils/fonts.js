@@ -5,6 +5,11 @@ export const fiCenturyVariable = localFont({
     display: "swap",
 });
 
+export const fiCenturyThin = localFont({
+    src: "../../public/fonts/centurythin.woff2",
+    display: "swap",
+});
+
 export const fiCenturyLight = localFont({
     src: "../../public/fonts/centurylight.woff2",
     display: "swap",

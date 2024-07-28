@@ -15,11 +15,48 @@ const config = {
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
             colors: {
-                fi: {
-                    100: "#00004A", // Primary color
-                    200: "#04ADFF", // Secondary color
-                    300: "#8BAC1A", // CTA
-                    400: "#484848", // Body Content
+                fiPrimary: {
+                    50: "#CECEFF",
+                    100: "#9C9CFF",
+                    200: "#6B6BFF",
+                    300: "#3939FF",
+                    400: "#0808FF",
+                    500: "#0000D5",
+                    600: "#0000A4",
+                    700: "#00007B",
+                    800: "#000052",
+                    900: "#000029",
+                },
+                fiLight: {
+                    50: "#DBF3FF",
+                    100: "#B6E8FF",
+                    200: "#92DCFF",
+                    300: "#6DD1FF",
+                    400: "#49C5FF",
+                    500: "#24BAFF",
+                    600: "#00AEFF",
+                    700: "#0083BF",
+                    800: "#005780",
+                    900: "#002C40",
+                },
+                fiGreen: {
+                    50: "#F3FAD6",
+                    100: "#E6F6AE",
+                    200: "#DAF185",
+                    300: "#CDEC5D",
+                    400: "#C1E834",
+                    500: "#ADD619",
+                    600: "#8CAD14",
+                    700: "#69820F",
+                    800: "#46570A",
+                    900: "#232B05",
+                },
+                fiContent: {
+                    100: "#000000", // Black color - Title
+                    200: "#484848", // Body content - dark grey
+                },
+                fiCommons: {
+                    100: "#FFFFFF", // White
                 },
             },
         },

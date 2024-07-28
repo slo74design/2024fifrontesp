@@ -15,7 +15,7 @@ export default async function NewsTopBar() {
     return (
         <Suspense fallback={<Loading />}>
             <div
-                className={`${fiCenturySemiBold.className} bg-fi-300 w-full flex justify-center items-center py-4 px-10 text-white gap-x-2`}
+                className={`${fiCenturySemiBold.className} order-2 md:order-first bg-fiGreen-600 w-full flex justify-center items-center py-4 px-10 text-white gap-x-2`}
             >
                 {Object.values(dataWp).length && locale === "es" ? (
                     <Link
