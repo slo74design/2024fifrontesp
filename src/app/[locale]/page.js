@@ -5,7 +5,7 @@ import HomeHig from "@/components/HomeHIG";
 export default function Home() {
     // const t = useTranslations("Index");
     return (
-        <main className="flex flex-col justify-start w-screen">
+        <main>
             <HomeHero />
             <HomeHig />
             <BannerBudgetRequest />

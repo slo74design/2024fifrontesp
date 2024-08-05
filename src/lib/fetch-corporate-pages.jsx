@@ -17,9 +17,12 @@ export async function getHomePage(wpPageTemplate) {
                                     shortDescription
                                     ctas {
                                         ctaLabel
+                                        ctaUrl
+                                        ctaLook
+                                        ctaType
                                         ctaColor
                                         ctaSize
-                                        ctaUrl
+                                        ctaIcon
                                     }
                                 }
                             }

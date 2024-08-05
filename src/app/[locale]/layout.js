@@ -26,7 +26,7 @@ export default function RootLayout({ children, params: { locale } }) {
             </head>
             <body className={fiCenturyRegular.className}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
-                    <div className="flex flex-col min-h-screen w-full items-start justify-start m-0 p-0">
+                    <div className="max-w-full min-h-screen">
                         <div className="sticky top-0 z-50 w-full">
                             <HeaderParent />
                         </div>

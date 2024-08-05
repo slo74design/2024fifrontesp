@@ -11,10 +11,10 @@ const FISectionBkgd = ({ type, isSquared, children }) => {
                 return "bg-slate-50";
                 break;
             case 3:
-                return "bg-red-pattern";
+                return "bg-redpattern";
                 break;
             case 4:
-                return "bg-triangle-pattern";
+                return "bg-trianglepattern";
                 break;
             case 5:
                 return "bg-gradient-to-tr from-black from-2% via-fiLight-500 to-fiLight-300 to-100%";

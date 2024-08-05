@@ -31,7 +31,7 @@ export default async function HomeHero() {
     };
 
     return (
-        <div className="relative bg-gradient-to-br from-black from-30% to-fiLight-600 to-100% w-full">
+        <div className="sectionHomehero bg-gradient-to-br from-black from-30% to-fiLight-600 to-100% w-full">
             <div className={`w-full flex flex-col px-24 pt-28 pb-12 gap-y-16`}>
                 <div
                     className={`flex flex-col justify-center ${
@@ -62,18 +62,18 @@ export default async function HomeHero() {
                         {infos.shortDescription}
                     </div>
                     <div className="mt-7 flex items-center gap-x-6">
-                        {/* {infos.ctas.map((cta, index) => (
+                        {infos.ctas.map((cta, index) => (
                             <FIButton
-                                size={2}
+                                size={Number(cta.ctaSize[0])}
                                 color={Number(cta.ctaColor[0])}
-                                look={2}
+                                look={Number(cta.ctaLook[0])}
                                 type={Number(cta.ctaType[0])}
                                 text={cta.ctaLabel}
                                 url={cta.ctaUrl}
-                                icon={0}
+                                icon={Number(cta.ctaIcon[0]) || 0}
                                 indice={index}
                             />
-                        ))} */}
+                        ))}
                     </div>
                 </div>
                 <HomeFacts />

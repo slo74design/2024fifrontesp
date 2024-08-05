@@ -9,11 +9,6 @@ const config = {
     ],
     theme: {
         extend: {
-            backgroundImage: {
-                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-conic":
-                    "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-            },
             colors: {
                 fiPrimary: {
                     50: "#CECEFF",
@@ -60,8 +55,8 @@ const config = {
                 },
             },
             backgroundImage: {
-                "red-pattern": "url('/bkgd-red.png')",
-                "triangle-pattern": "url('/bkgd-triangle.png')",
+                redpattern: "url('/bkgd-red.png')",
+                trianglepattern: "url('/bkgd-triangle.png')",
             },
         },
     },

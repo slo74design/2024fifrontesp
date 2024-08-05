@@ -4,12 +4,12 @@ import FISectionBkgd from "@/ux/elements/FISectionBkgd";
 
 export default function BannerBudgetRequest() {
     return (
-        <FISectionBkgd type={5} isSquared={true}>
+        <FISectionBkgd type={3} isSquared={true}>
             <div className="flex flex-col justify-center items-center gap-y-2 w-full text-white">
                 <h1
                     className={`${fiCenturyBold.className} text-3xl uppercase tracking-wide`}
                 >
-                    Ready to claim?
+                    Ready to claim now?
                 </h1>
                 <p className="font-light max-w-lg text-center">
                     Have you invested in new products or processes in the last 2
