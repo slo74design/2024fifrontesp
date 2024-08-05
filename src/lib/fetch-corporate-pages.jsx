@@ -18,7 +18,7 @@ export async function getHomePage(wpPageTemplate) {
                                     ctas {
                                         ctaLabel
                                         ctaColor
-                                        ctaType
+                                        ctaSize
                                         ctaUrl
                                     }
                                 }

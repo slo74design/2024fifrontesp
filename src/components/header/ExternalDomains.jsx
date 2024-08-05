@@ -14,6 +14,7 @@ export default async function ExternalDomains() {
             : menuTop.filter(
                   (object) => object.locations[0] === "MENU_MAIN_EN"
               );
+
     return (
         <Suspense fallback={<Loading />}>
             <div className="bg-white w-full flex justify-start items-center text-sm text-slate-700 uppercase">
