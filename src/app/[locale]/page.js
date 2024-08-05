@@ -1,10 +1,14 @@
+import BannerBudgetRequest from "@/components/BannerBudgetRequest";
 import HomeHero from "@/components/header/HomeHero";
+import HomeHig from "@/components/HomeHIG";
 
 export default function Home() {
     // const t = useTranslations("Index");
     return (
-        <main className="flex w-full">
+        <main className="flex flex-col justify-start w-screen">
             <HomeHero />
+            <HomeHig />
+            <BannerBudgetRequest />
 
             {/* <CldImage
                 width="960"

@@ -59,6 +59,10 @@ const config = {
                     100: "#FFFFFF", // White
                 },
             },
+            backgroundImage: {
+                "red-pattern": "url('/bkgd-red.png')",
+                "triangle-pattern": "url('/bkgd-triangle.png')",
+            },
         },
     },
     plugins: [flowbite.plugin(), require("@tailwindcss/forms")],

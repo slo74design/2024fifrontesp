@@ -1,7 +1,6 @@
-// "use client";
-
-import { ArrowUpRight, MoveRight } from "lucide-react";
 import Link from "next/link";
+import { fiCenturySemiBold } from "@/utils/fonts";
+import { ArrowUpRight, MoveRight } from "lucide-react";
 
 // size: 1) small - 2) medium
 // color: 1) fiPrimary-600 - 2) fiLight-600 - 3) fiGreen-600 - 4) FiCommons-100
@@ -9,7 +8,7 @@ import Link from "next/link";
 // look: 1) icon only - 2) text only - 3) text icon 4) icon first
 // type: 1) simple - 2) outlined - 3) filled
 
-const FiButton = ({ size, color, look, type, text, url, icon }) => {
+const FiButton = ({ size, color, look, type, text, url, icon, indice }) => {
     const isColor = (color) => {
         switch (color) {
             case 1:
@@ -47,7 +46,7 @@ const FiButton = ({ size, color, look, type, text, url, icon }) => {
                 return "ring-0";
                 break;
             case 2: // outlined
-                return "ring-1 ring-inset ring-gray-300 bg-transparent";
+                return "ring-1 ring-inset ring-gray-300 bg-transparent hover:ring-0";
                 break;
             case 3: // filled
                 return "ring-0 " + isColor(color);
@@ -103,7 +102,10 @@ const FiButton = ({ size, color, look, type, text, url, icon }) => {
     return (
         <Link
             href={url}
-            className={`rounded-full text-center font-semibold uppercase tracking-widest ${isSize(
+            key={indice}
+            className={`${
+                fiCenturySemiBold.className
+            } rounded-full text-center uppercase tracking-widest ${isSize(
                 size
             )} ${isType(type)} ${isColor(color)}`}
         >

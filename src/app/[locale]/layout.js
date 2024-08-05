@@ -32,17 +32,11 @@ export default function RootLayout({ children, params: { locale } }) {
                         </div>
                         {children}
                         <InitFlowbite />
-                        {checkCookieFiNwModal == undefined ? (
+                        {/* {checkCookieFiNwModal == undefined ? (
                             console.log("not found")
                         ) : (
                             <p>{locale}</p>
-                        )}
-                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
-                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
-                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
-                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
-                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
-                        <h1>lodsdasd dsadasdsd dsadsadasd</h1>
+                        )} */}
                     </div>
                 </NextIntlClientProvider>
             </body>

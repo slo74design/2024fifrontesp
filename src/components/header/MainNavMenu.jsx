@@ -25,7 +25,7 @@ export default function MainNavMenu() {
                     small
                         ? "bg-white border-b border-b-slate-100"
                         : "bg-transparent"
-                } absolute top-30 left-0 z-40 w-full py-2 scroll-smooth`}
+                } absolute top-30 left-0 w-full py-2 scroll-smooth z-1`}
             >
                 <div className="flex flex-wrap justify-start items-center pl-16 py-4">
                     <Link href="/" className="flex items-center">

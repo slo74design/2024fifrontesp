@@ -4,7 +4,7 @@ import React from "react";
 const FiFactSingle = ({ numb, txt }) => {
     return (
         <div
-            className={`flex flex-row gap-x-2 text-white hover:text-fiLight-600 cursor-default`}
+            className={`flex flex-row justify-center gap-x-2 text-white hover:text-fiLight-600 cursor-default`}
         >
             <span className={`${fiCenturyBold.className} text-4xl`}>
                 {numb}
