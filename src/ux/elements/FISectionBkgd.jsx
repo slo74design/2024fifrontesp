@@ -14,19 +14,15 @@ const FISectionBkgd = ({ type, isSquared, children }) => {
                 return "bg-redpattern";
                 break;
             case 4:
-                return "bg-trianglepattern";
+                return "bg-trianglepattern bg-cover";
                 break;
             case 5:
-                return "bg-gradient-to-tr from-black from-2% via-fiLight-500 to-fiLight-300 to-100%";
+                return "bg-gradient-to-tr from-black from-2% via-fiLight-500 to-fiLight-300 to-100% bg-cover";
                 break;
         }
     };
     return (
-        <div
-            className={`${isType(type)} ${
-                isSquared ? "rounded-t-[22px]" : ""
-            } w-full p-16 -mt-5 z-10`}
-        >
+        <div className={`${isType(type)} min-w-full w-screen p-16`}>
             {children}
         </div>
     );

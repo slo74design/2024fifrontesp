@@ -11,21 +11,37 @@ export async function getHomePage(wpPageTemplate) {
                             ... on Template_FIHome1 {
                                 templateName
                                 pageHomeFields {
-                                    contentPosition
-                                    title1stLine
-                                    title2ndLine
-                                    shortDescription
-                                    ctas {
+                                    heroInfos {
+                                        contentPosition
+                                        title1stLine
+                                        title2ndLine
+                                        shortDescription
+                                        ctas {
+                                            ctaLabel
+                                            ctaUrl
+                                            ctaLook
+                                            ctaType
+                                            ctaColor
+                                            ctaSize
+                                            ctaIcon
+                                        }
+                                    }
+                                    bannerInfos {
+                                        title
+                                        subtitle
                                         ctaLabel
                                         ctaUrl
-                                        ctaLook
-                                        ctaType
-                                        ctaColor
-                                        ctaSize
-                                        ctaIcon
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+                fICountryAdmin {
+                    optionsCountryAdmin {
+                        facts {
+                            bigNumber
+                            factsDescription
                         }
                     }
                 }
@@ -41,5 +57,5 @@ export async function getHomePage(wpPageTemplate) {
         },
     });
 
-    return data.pages.nodes[0];
+    return data;
 }

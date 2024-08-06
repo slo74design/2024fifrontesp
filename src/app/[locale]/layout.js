@@ -4,6 +4,7 @@ import { ThemeModeScript } from "flowbite-react";
 import { InitFlowbite } from "@/lib/flowbite-client";
 
 import HeaderParent from "@/components/HeaderParent";
+import FooterMain from "@/components/footer/FooterMain";
 import { fiCenturyRegular } from "@/utils/fonts";
 import "../globals.css";
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children, params: { locale } }) {
                         ) : (
                             <p>{locale}</p>
                         )} */}
+                        <FooterMain />
                     </div>
                 </NextIntlClientProvider>
             </body>

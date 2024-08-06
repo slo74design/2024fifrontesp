@@ -1,24 +1,14 @@
 import BannerBudgetRequest from "@/components/BannerBudgetRequest";
 import HomeHero from "@/components/header/HomeHero";
-import HomeHig from "@/components/HomeHIG";
+import HomeHig from "@/components/HomeHig";
 
 export default function Home() {
     // const t = useTranslations("Index");
     return (
-        <main>
+        <main className="w-screen">
             <HomeHero />
             <HomeHig />
             <BannerBudgetRequest />
-
-            {/* <CldImage
-                width="960"
-                height="600"
-                src="sample"
-                sizes="100vw"
-                alt="Description of my image"
-                priority
-                className="w-auto h-auto"
-            /> */}
         </main>
     );
 }
