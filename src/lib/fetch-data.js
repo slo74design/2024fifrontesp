@@ -156,6 +156,57 @@ export async function getCountryDomains() {
     return data.fISuperAdmin.superadminFields.fiCountryDomains;
 }
 
+export async function getMiscellaneousCountryAdmin() {
+    const { data } = await getClient().query({
+        query: gql`
+            query {
+                fICountryAdmin {
+                    optionsCountryAdmin {
+                        fiGroup {
+                            businessName
+                            address
+                            city
+                            country
+                            businessEmail
+                            phoneNumber
+                            vatNumber
+                        }
+                        contactPageBlock {
+                            isPhone
+                            isEmail
+                            isBusinessInformations
+                            isCv
+                        }
+                        copyrightInfos {
+                            copyrightText
+                            copyrightTextEng
+                        }
+                        hhrrDepartment {
+                            hhrrCountryEmail
+                            hhrrCountryResponsable
+                        }
+                        socialLinks {
+                            fcbkPageUrl
+                            igPageUrl
+                            linkedinPageUrl
+                            xPageUrl
+                            xingPageUrl
+                            ytPageUrl
+                        }
+                    }
+                }
+            }
+        `,
+        context: {
+            fetchOptions: {
+                next: { revalidate: 5 },
+            },
+        },
+    });
+
+    return data.fICountryAdmin.optionsCountryAdmin;
+}
+
 export async function getPostsES(categoryName) {
     const { data } = await getClient().query({
         query: gql`

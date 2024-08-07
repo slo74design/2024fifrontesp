@@ -1,11 +1,19 @@
 import { gql } from "@apollo/client";
 import { getClient } from "./apollo-client";
 
-export async function getHomePage(wpPageTemplate) {
+export async function getHomePage(wpPageTemplate, categoryName) {
     const { data } = await getClient().query({
         query: gql`
-            query getHome($wpPageTemplate: String = "") {
-                pages(where: { wpPageTemplate: $wpPageTemplate }) {
+            query getHome(
+                $wpPageTemplate: String = ""
+                $categoryName: String = ""
+            ) {
+                pages(
+                    where: {
+                        wpPageTemplate: $wpPageTemplate
+                        categoryName: $categoryName
+                    }
+                ) {
                     nodes {
                         template {
                             ... on Template_FIHome1 {
@@ -49,6 +57,7 @@ export async function getHomePage(wpPageTemplate) {
         `,
         variables: {
             wpPageTemplate,
+            categoryName,
         },
         context: {
             fetchOptions: {
