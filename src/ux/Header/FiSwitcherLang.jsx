@@ -1,17 +1,18 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useLocale } from "next-intl";
-import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { Dropdown } from "flowbite-react";
+import { _LANGMAIN } from "@/utils/constants";
 import { fiCenturySemiBold } from "@/utils/fonts";
 import { getFlags } from "@/data";
-import Image from "next/image";
-import { Dropdown } from "flowbite-react";
+import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
 const FiSwitcherLang = ({ domains }) => {
     const locale = useLocale();
 
     const currentDomain = domains.filter(
-        (object) => object.isoLangCode === process.env.NEXT_PUBLIC_MAIN_LANG
+        (object) => object.isoLangCode === _LANGMAIN
     );
 
     const excludeDomain = domains.filter(function (object) {

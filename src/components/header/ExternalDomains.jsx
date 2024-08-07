@@ -1,15 +1,16 @@
 import React, { Suspense } from "react";
-import { useLocale } from "next-intl";
-import { Loading } from "@/ux";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import { getNavMenus } from "@/lib/fetch-data";
+import { Loading } from "@/ux";
+import { _LANGMAIN } from "@/utils/constants";
 
 export default async function ExternalDomains() {
     const locale = useLocale();
     const menuTop = await getNavMenus();
 
     const menuFilteredByLang =
-        locale === process.env.NEXT_PUBLIC_MAIN_LANG
+        locale === _LANGMAIN
             ? menuTop.filter((object) => object.locations[0] === "MENU_MAIN")
             : menuTop.filter(
                   (object) => object.locations[0] === "MENU_MAIN_EN"

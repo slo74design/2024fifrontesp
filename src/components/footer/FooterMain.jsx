@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { CldImage } from "@/ux";
+import { useLocale } from "next-intl";
 import { getMiscellaneousCountryAdmin, getNavMenus } from "@/lib/fetch-data";
 import { fiCenturyBold } from "@/utils/fonts";
-import { useLocale } from "next-intl";
+import { _LANGMAIN } from "@/utils/constants";
+import { CldImage } from "@/ux";
 import SocialLinks from "@/ux/footer/SocialLinks";
 
 export default async function FooterMain() {
@@ -11,7 +12,7 @@ export default async function FooterMain() {
     const menuLegal = await getNavMenus();
 
     const menuFilteredByLang =
-        locale === process.env.NEXT_PUBLIC_MAIN_LANG
+        locale === _LANGMAIN
             ? menuLegal.filter(
                   (object) => object.locations[0] === "MENU_LEGAL_ES"
               )
@@ -41,7 +42,7 @@ export default async function FooterMain() {
                             " - " + dataWp?.fiGroup.vatNumber}
                     </span>
                     <span className={`font-light text-xs tracking-wide`}>
-                        {locale === process.env.NEXT_PUBLIC_MAIN_LANG
+                        {locale === _LANGMAIN
                             ? dataWp?.copyrightInfos.copyrightText
                             : dataWp?.copyrightInfos.copyrightTextEng}
                     </span>
