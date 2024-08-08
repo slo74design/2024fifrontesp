@@ -1,18 +1,24 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import MainNavMenu from "./MainNavMenu";
-import {
-    fiCenturyBold,
-    fiCenturyLight,
-    fiCenturyRegular,
-    fiCenturyThin,
-    fiCenturyVariable,
-} from "@/utils/fonts";
 import { getHomePage } from "@/lib/fetch-corporate-pages";
 import HomeFacts from "../HomeFacts";
 import { FIButton } from "@/ux";
+import {
+    _CENTURYBOLD,
+    _CENTURYLIGHT,
+    _CENTURYREGULAR,
+    _LANGENGPAGES,
+    _LANGMAIN,
+    _LANGMAINPAGES,
+} from "@/utils/constants";
+import { useLocale } from "next-intl";
 
 export default async function HomeHero() {
-    const dataWp = await getHomePage("home");
+    const locale = useLocale();
+    const dataWp = await getHomePage(
+        "home",
+        locale === _LANGMAIN ? _LANGMAINPAGES : _LANGENGPAGES
+    );
     const heroInfos =
         dataWp.pages?.nodes[0]?.template?.pageHomeFields.heroInfos;
 
@@ -47,19 +53,17 @@ export default async function HomeHero() {
                     } gap-y-1 leading-none text-white p-0 w-full ${fixFontSizeWidthHeadings()}`}
                 >
                     <h1
-                        className={`${fiCenturyLight.className} font-extralight tracking-tight uppercase`}
+                        className={`${_CENTURYLIGHT} font-extralight tracking-tight uppercase`}
                     >
                         {heroInfos.title1stLine}
                     </h1>
                     <h1
-                        className={`${fiCenturyBold.className} tracking-wide text-fiLight-600 uppercase`}
+                        className={`${_CENTURYBOLD} tracking-wide text-fiLight-600 uppercase`}
                     >
                         {heroInfos.title2ndLine}
                     </h1>
                     <div
-                        className={`${
-                            fiCenturyRegular.className
-                        } mt-6 max-w-5xl text-gray-300 ${
+                        className={`${_CENTURYREGULAR} mt-6 max-w-5xl text-gray-300 ${
                             heroInfos.shortDescription.length > 200
                                 ? "text-lg leading-7"
                                 : "text-xl leading-8"

@@ -148,7 +148,7 @@ export async function getCountryDomains() {
         `,
         context: {
             fetchOptions: {
-                next: { revalidate: 600 },
+                next: { revalidate: 5 },
             },
         },
     });
@@ -156,7 +156,7 @@ export async function getCountryDomains() {
     return data.fISuperAdmin.superadminFields.fiCountryDomains;
 }
 
-export async function getMiscellaneousCountryAdmin() {
+export async function getFooterInfos() {
     const { data } = await getClient().query({
         query: gql`
             query {
@@ -171,19 +171,9 @@ export async function getMiscellaneousCountryAdmin() {
                             phoneNumber
                             vatNumber
                         }
-                        contactPageBlock {
-                            isPhone
-                            isEmail
-                            isBusinessInformations
-                            isCv
-                        }
                         copyrightInfos {
                             copyrightText
                             copyrightTextEng
-                        }
-                        hhrrDepartment {
-                            hhrrCountryEmail
-                            hhrrCountryResponsable
                         }
                         socialLinks {
                             fcbkPageUrl
@@ -192,6 +182,17 @@ export async function getMiscellaneousCountryAdmin() {
                             xPageUrl
                             xingPageUrl
                             ytPageUrl
+                        }
+                    }
+                }
+                fISuperAdmin {
+                    superadminFields {
+                        partnersLogo {
+                            certificationsTitle
+                            certificationsTitleEn
+                            certificationsLogos {
+                                pictureUrl
+                            }
                         }
                     }
                 }
@@ -204,7 +205,7 @@ export async function getMiscellaneousCountryAdmin() {
         },
     });
 
-    return data.fICountryAdmin.optionsCountryAdmin;
+    return data;
 }
 
 export async function getPostsES(categoryName) {

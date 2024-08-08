@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { fiCenturySemiBold } from "@/utils/fonts";
 import { Menu, Search } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";

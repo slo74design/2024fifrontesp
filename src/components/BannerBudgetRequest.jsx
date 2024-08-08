@@ -1,10 +1,20 @@
 import FISectionBkgd from "@/ux/elements/FISectionBkgd";
-import { fiCenturyBold } from "@/utils/fonts";
 import { FIButton } from "@/ux";
 import { getHomePage } from "@/lib/fetch-corporate-pages";
+import {
+    _CENTURYBOLD,
+    _LANGENGPAGES,
+    _LANGMAIN,
+    _LANGMAINPAGES,
+} from "@/utils/constants";
+import { useLocale } from "next-intl";
 
 export default async function BannerBudgetRequest() {
-    const dataWp = await getHomePage("home");
+    const locale = useLocale();
+    const dataWp = await getHomePage(
+        "home",
+        locale === _LANGMAIN ? _LANGMAINPAGES : _LANGENGPAGES
+    );
     const bannerInfos =
         dataWp.pages?.nodes[0]?.template?.pageHomeFields.bannerInfos;
 
@@ -13,7 +23,7 @@ export default async function BannerBudgetRequest() {
             <FISectionBkgd type={5} isSquared={true}>
                 <div className="flex flex-col justify-center items-center gap-y-2 w-full text-white">
                     <h1
-                        className={`${fiCenturyBold.className} text-3xl uppercase tracking-wide`}
+                        className={`${_CENTURYBOLD} text-3xl uppercase tracking-wide`}
                     >
                         {bannerInfos.title}
                     </h1>

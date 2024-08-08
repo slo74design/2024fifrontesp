@@ -5,8 +5,8 @@ import { InitFlowbite } from "@/lib/flowbite-client";
 
 import HeaderParent from "@/components/HeaderParent";
 import FooterMain from "@/components/footer/FooterMain";
-import { fiCenturyRegular } from "@/utils/fonts";
 import "../globals.css";
+import { _CENTURYREGULAR } from "@/utils/constants";
 
 export const metadata = {
     title: "Create Next App",
@@ -25,7 +25,7 @@ export default function RootLayout({ children, params: { locale } }) {
             <head>
                 <ThemeModeScript />
             </head>
-            <body className={fiCenturyRegular.className}>
+            <body className={`${_CENTURYREGULAR}`}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <div className="max-w-full min-h-screen">
                         <div className="sticky top-0 z-50 w-full">

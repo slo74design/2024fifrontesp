@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { Dropdown } from "flowbite-react";
-import { _LANGMAIN } from "@/utils/constants";
-import { fiCenturySemiBold } from "@/utils/fonts";
+import { _CENTURYSEMIBOLD, _LANGMAIN } from "@/utils/constants";
+
 import { getFlags } from "@/data";
 import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
@@ -22,7 +22,7 @@ const FiSwitcherLang = ({ domains }) => {
     const labelSelected = (currentDomain) => {
         return (
             <div
-                className={`${fiCenturySemiBold.className} inline-flex max-w-48 w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-fiContent-200 ring-gray-300 hover:bg-gray-50`}
+                className={`${_CENTURYSEMIBOLD} inline-flex max-w-48 w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-fiContent-200 ring-gray-300 hover:bg-gray-50`}
             >
                 <Image
                     className="w-5 h-5"
@@ -45,7 +45,7 @@ const FiSwitcherLang = ({ domains }) => {
                         href={`${lang.siteUrl}`}
                         role="menuitem"
                         tabIndex="-1"
-                        className={`${fiCenturySemiBold.className} flex flex-row gap-x-2 px-4 py-0 text-sm text-fiContent-200 hover:text-fiLight-600`}
+                        className={`${_CENTURYSEMIBOLD} flex flex-row gap-x-2 px-4 py-0 text-sm text-fiContent-200 hover:text-fiLight-600`}
                     >
                         <Image
                             className="w-5 h-5"

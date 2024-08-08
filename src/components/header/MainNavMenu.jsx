@@ -1,10 +1,10 @@
 "use client";
 
-import { fiCenturySemiBold } from "@/utils/fonts";
 import { CldImage } from "@/ux";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { _CENTURYSEMIBOLD } from "@/utils/constants";
 
 export default function MainNavMenu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +68,7 @@ export default function MainNavMenu() {
                         className="hidden ml-10 items-center justify-between w-full md:flex md:w-auto md:order-1"
                     >
                         <ul
-                            className={`${fiCenturySemiBold.className} ${
+                            className={`${_CENTURYSEMIBOLD} ${
                                 small ? "text-slate-900" : "text-slate-50"
                             } flex flex-col text-sm font-semibold md:flex-row md:mt-0 md:space-x-4 rtl:space-x-reverse`}
                         >

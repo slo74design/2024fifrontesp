@@ -5,8 +5,8 @@ import Link from "next/link";
 import { getNewsTracker } from "@/lib/fetch-data";
 
 import Loading from "@/ux/Loading";
-import { fiCenturySemiBold } from "@/utils/fonts";
 import { ArrowRight } from "lucide-react";
+import { _CENTURYSEMIBOLD } from "@/utils/constants";
 
 export default async function NewsTopBar() {
     const locale = useLocale();
@@ -15,7 +15,7 @@ export default async function NewsTopBar() {
     return (
         <Suspense fallback={<Loading />}>
             <div
-                className={`${fiCenturySemiBold.className} order-2 md:order-first bg-fiGreen-600 w-full flex justify-center items-center py-4 px-10 text-white gap-x-2`}
+                className={`${_CENTURYSEMIBOLD} order-2 md:order-first bg-fiGreen-600 w-full flex justify-center items-center py-4 px-10 text-white gap-x-2`}
             >
                 {Object.values(dataWp).length && locale === "es" ? (
                     <Link

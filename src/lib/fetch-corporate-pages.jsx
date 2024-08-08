@@ -40,6 +40,17 @@ export async function getHomePage(wpPageTemplate, categoryName) {
                                         ctaLabel
                                         ctaUrl
                                     }
+                                    testimonialList {
+                                        clientCompany
+                                        clientName
+                                        clientRole
+                                        content
+                                        logoUrl {
+                                            node {
+                                                sourceUrl(size: LARGE)
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }

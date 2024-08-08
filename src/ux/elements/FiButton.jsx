@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { fiCenturySemiBold } from "@/utils/fonts";
+import { _CENTURYSEMIBOLD } from "@/utils/constants";
 import { ArrowUpRight, MoveRight } from "lucide-react";
 
 // size: 1) small - 2) medium
@@ -103,9 +103,7 @@ const FiButton = ({ size, color, look, type, text, url, icon, indice }) => {
         <Link
             href={url}
             key={indice}
-            className={`${
-                fiCenturySemiBold.className
-            } rounded-full text-center uppercase tracking-widest ${isSize(
+            className={`${_CENTURYSEMIBOLD} rounded-full text-center uppercase tracking-widest ${isSize(
                 size
             )} ${isType(type)} ${isColor(color)}`}
         >

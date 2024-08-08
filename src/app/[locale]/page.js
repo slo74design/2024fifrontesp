@@ -1,4 +1,5 @@
 import BannerBudgetRequest from "@/components/BannerBudgetRequest";
+import ClientTestimonials from "@/components/footer/ClientTestimonials";
 import HomeHero from "@/components/header/HomeHero";
 import HomeHig from "@/components/HomeHig";
 
@@ -9,6 +10,7 @@ export default function Home() {
             <HomeHero />
             <HomeHig />
             <BannerBudgetRequest />
+            <ClientTestimonials />
         </main>
     );
 }

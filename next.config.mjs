@@ -9,6 +9,14 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "res.cloudinary.com",
             },
+            {
+                protocol: "https",
+                hostname: "backend.fi-group.es",
+            },
+            {
+                protocol: "https",
+                hostname: "images.pexels.com",
+            },
         ],
         // domains: ["res.cloudinary.com"],
     },
