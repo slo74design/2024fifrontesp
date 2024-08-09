@@ -51,6 +51,18 @@ export async function getHomePage(wpPageTemplate, categoryName) {
                                             }
                                         }
                                     }
+                                    publicationDetails {
+                                        selectCats {
+                                            nodes {
+                                                ... on Category {
+                                                    databaseId
+                                                    name
+                                                    slug
+                                                    uri
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }

@@ -21,7 +21,7 @@ export default async function BannerBudgetRequest() {
     return (
         <div className="sectionBanner rounded-t-[36px] z-[12] -mt-7 overflow-auto">
             <FISectionBkgd type={5} isSquared={true}>
-                <div className="flex flex-col justify-center items-center gap-y-2 w-full text-white">
+                <div className="flex flex-col justify-center items-center gap-y-2 w-full text-white pb-7">
                     <h1
                         className={`${_CENTURYBOLD} text-3xl uppercase tracking-wide`}
                     >

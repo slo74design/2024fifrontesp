@@ -24,3 +24,6 @@ export const _CENTURYLIGHT = fiCenturyLight.className;
 export const _CENTURYREGULAR = fiCenturyRegular.className;
 export const _CENTURYSEMIBOLD = fiCenturySemiBold.className;
 export const _CENTURYBOLD = fiCenturyBold.className;
+
+// Default Images
+export const _NOPOSTIMAGE = "/defaultPics/noposts.jpg";

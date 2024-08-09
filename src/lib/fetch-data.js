@@ -208,6 +208,88 @@ export async function getFooterInfos() {
     return data;
 }
 
+export async function AllPostsByFilters(
+    first,
+    categoryIn,
+    categoryName,
+    tagIn,
+    tagId
+) {
+    const { data } = await getClient().query({
+        query: gql`
+            query getAllPostsByFilters(
+                $first: Int
+                $categoryIn: [ID]
+                $categoryName: String = ""
+                $tagIn: [ID]
+                $tagId: String = ""
+            ) {
+                posts(
+                    first: $first
+                    where: {
+                        categoryIn: $categoryIn
+                        status: PUBLISH
+                        categoryName: $categoryName
+                        tagIn: $tagIn
+                        tagId: $tagId
+                    }
+                ) {
+                    nodes {
+                        categories {
+                            nodes {
+                                databaseId
+                                name
+                                uri
+                                slug
+                            }
+                        }
+                        tags {
+                            nodes {
+                                databaseId
+                                name
+                                uri
+                            }
+                        }
+                        databaseId
+                        date
+                        contentTypeName
+                        title
+                        slug
+                        content(format: RENDERED)
+                        featuredImage {
+                            node {
+                                sourceUrl(size: LARGE)
+                                mediaDetails {
+                                    width
+                                    height
+                                }
+                                altText
+                            }
+                        }
+                        excerpt
+                        isSticky
+                    }
+                }
+            }
+        `,
+        variables: {
+            first,
+            categoryIn,
+            categoryName,
+            tagIn,
+            tagId,
+        },
+        context: {
+            fetchOptions: {
+                next: { revalidate: 5 },
+            },
+        },
+    });
+
+    return data.posts.nodes;
+}
+
+// Query de pruebas
 export async function getPostsES(categoryName) {
     const { data } = await getClient().query({
         query: gql`

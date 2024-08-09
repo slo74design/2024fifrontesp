@@ -7,5 +7,8 @@
     },
     "UI": {
         "search": "Search..."
+    },
+    "Generics": {
+        "noposts": "No results found"
     }
 }
